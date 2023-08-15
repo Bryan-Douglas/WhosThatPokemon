@@ -1,0 +1,71 @@
+.homePage-container {
+    display: flex;
+    height: 83%;
+
+    .homePage-leftWrapper {
+        width: 50%;
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0rem 0rem 1rem 1rem;
+
+        .homePage-button {
+            width: 45%;
+            height: 5rem;
+            background-color: #386ABB;
+            border: solid 0.1875rem #FFCC03;
+            font-size: 1.125rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+            color: #FFCC03;
+            border-radius: 0.625rem;
+            cursor: pointer;
+        }
+
+        .homePage-button:hover {
+            background-color: #274A82;
+        }
+
+        .homePage-button:active {
+            box-shadow: inset 0rem 0rem 0.625rem;
+            outline: none;
+        }
+
+        .homePage-trainerCard {
+            width: 70%;
+            height: 18.0469rem;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+    }
+
+    .homePage-rightWrapper {
+        border: solid 1px black;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // .modal-overlay {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color: rgba(0, 0, 0, 0.5);
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+
+    //     .modal-content {
+    //         background-color: white;
+    //         padding: 20px;
+    //         border-radius: 5px;
+    //         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+
+    //         .modal-closeButton {
+    //             margin-top: 10px;
+    //           }
+    //       }
+    //   }  
+}
