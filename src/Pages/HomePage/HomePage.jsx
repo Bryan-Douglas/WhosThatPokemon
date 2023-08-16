@@ -23,28 +23,12 @@ function HomePage() {
     <>
       <div className='homePage-container'>
         <div className='homePage-leftWrapper'>
-          <img
-            className='homePage-trainerCard'
-            src='assets/BryanTrainerCard.png'
-            alt='Bryans Pokemon Trainer Card'
-            onClick={openModal}
-          />
-          <button className='homePage-button' onClick={GameClick}>
-            Play The Game!
-          </button>
+          <img className='homePage-trainerCard' src='assets/BryanTrainerCard.png' alt='Bryans Pokemon Trainer Card' onClick={openModal} />
+          <button className='homePage-button' onClick={GameClick}> Play The Game!</button>
         </div>
         <div className='homePage-rightWrapper'>This is where the highscores will be!</div>
       </div>
-      {showModal && (
-        <div className='modal-overlay'>
-          <div className='modal-content'>
-            <TrainerBio />
-            <button className='modal-closeButton' onClick={closeModal}>
-              X
-            </button>
-          </div>
-        </div>
-      )}
+      {showModal && (<TrainerBio closeModal={closeModal} />)}
     </>
   );
 }

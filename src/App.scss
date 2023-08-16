@@ -1,5 +1,7 @@
+@use "./styles/variables" as *;
+
 .page-background {
-    background-color: #F81C1E;
+    background-color: $PrimaryBackground;
     width: 100%;
     height: 100vh;
 }
