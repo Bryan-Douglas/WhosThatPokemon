@@ -1,0 +1,91 @@
+@use "../../styles/variables" as *;
+
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0 0 0;
+
+    .game-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 21.875rem;
+        height: 21.875rem;
+        background-color: $PrimaryLightBlue;
+        border: solid 0.1875rem $PrimaryYellow;
+        border-radius: 0.625rem;
+        color: $PrimaryBlue;
+        box-shadow: inset 5rem 8rem 5rem;
+        outline: none;
+
+        .pokemon-avatar {
+            display: flex;
+            width: 15.625rem;
+            height: 15.625rem;
+            filter: brightness(0);
+        }
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 21.875rem;
+    margin: 1rem 0 0 0;
+
+    .game-input {
+        width: 65%;
+        height: 3.5rem;
+        background-image: linear-gradient(to bottom, $SecondaryBlue, lighten($PrimaryBlue, 4%));
+        border: solid 0.1875rem $PrimaryYellow;
+        border-radius: 0.625rem;
+        padding: 1rem;
+        font-size: 1.125rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        color: $PrimaryYellow;
+    }
+
+    .game-input:focus {
+        outline: none;
+    }
+
+    .game-button {
+        height: 4rem;
+        width: 4rem;
+        cursor: pointer;
+    }
+
+    .game-button:hover {
+        transform: rotate(-40deg);
+    }
+
+    .game-button:active {
+        filter: drop-shadow(0 0 0.9375rem rgba(255, 204, 3, 1.5));
+    }
+}
+
+.pokedex-border {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .pokedex-line {
+        border: solid 0.1875rem $PrimaryYellow;
+        flex: 1;
+    }
+
+    .pokedex-title {
+        margin: 0rem 0.5rem;
+        color: $PrimaryYellow;
+        font-size: 1.125rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+    }
+}

@@ -8,12 +8,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <div className='page-background'>
-      <Header />
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/game' element={<GamePage />} />
-        </Routes>
+        <div className='page-background'>
+          <div className='page-background__overlay'>
+            <Header />
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/game' element={<GamePage />} />
+            </Routes>
+          </div>
         </div>
       </BrowserRouter>
     </>
@@ -29,4 +31,5 @@ export default App;
 /* Credits
 - https://tcm.pokecharms.com/legacy?c=89e03e94-a5ab-4387-a750-1add567daaaa
 - https://fontmeme.com/pokemon-font/
+- https://svgcrown.com/download.php?category=pokeball&id=4
 */
