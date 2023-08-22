@@ -13,7 +13,7 @@
         .homePage-button {
             width: 45%;
             height: 5rem;
-            background-color: $PrimaryBlue;
+            background-image: linear-gradient(to bottom, $SecondaryBlue, lighten($PrimaryBlue, 4%));
             border: solid 0.1875rem $PrimaryYellow;
             font-size: 1.125rem;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -24,10 +24,11 @@
         }
 
         .homePage-button:hover {
-            background-color: $SecondaryBlue;
+            background-image: linear-gradient(to bottom, $PrimaryBlue, darken($SecondaryBlue, 22.25%));
         }
 
         .homePage-button:active {
+            color: $PrimaryYellow;
             box-shadow: inset 0rem 0rem 0.625rem;
             outline: none;
         }

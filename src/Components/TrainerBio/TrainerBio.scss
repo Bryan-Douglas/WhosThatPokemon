@@ -14,7 +14,7 @@
 }
 
 .trainer-content {
-    background-color: $SecondaryBlue;
+    background-image: linear-gradient(to bottom, $PrimaryBlue, lighten($SecondaryBlue, 2%));
     border: solid 0.125rem $PrimaryYellow;
     padding: 1.25rem;
     border-radius: 0.3125rem;
