@@ -69,6 +69,34 @@
     }
 }
 
+.message-container {
+    width: 100%;
+
+    .message-correct {
+        position: fixed;
+        width: 26.5625rem;
+        margin-top: 3.125rem;
+        transform: rotate(-20deg);
+    }
+
+    .message-incorrect {
+        position: fixed;
+        width: 26.5625rem;
+        margin-top: 3.125rem;
+        transform: rotate(-20deg);
+    }
+
+    .message-text {
+        color: $PrimaryYellow;
+        font-size: 1.5rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 400;
+        position: fixed;
+        margin-top: 12.5rem;
+        margin-left: 12.5rem;
+    }
+}
+
 .pokedex-border {
     width: 100%;
     margin-top: 1rem;
