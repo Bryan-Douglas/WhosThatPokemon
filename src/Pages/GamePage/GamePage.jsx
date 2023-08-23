@@ -15,6 +15,7 @@ function GamePage() {
   const [inputValue, setInputValue] = useState('');
   const [feedback, setFeedback] = useState('');
   const [showCorrect, setShowCorrect] = useState(false);
+  const [correctGuesses, setCorrectGuesses] = useState([]);
 
   useEffect(() => {
     const randomPokemonId = generateRandomPokemonId();
@@ -49,6 +50,7 @@ function GamePage() {
     if (inputValue == activePokemon.name) {
       setFeedback('correct');
       setShowCorrect(true);
+      handleCorrectGuess(activePokemon);
       setTimeout(() => {
         setShowCorrect(false);
         fetchPokemonSprite();
@@ -65,6 +67,10 @@ function GamePage() {
         setFeedback('');
       }, 1000);
     }
+  };
+
+  const handleCorrectGuess = (pokemon) => {
+    setCorrectGuesses((prevGuesses) => [...prevGuesses, pokemon]);
   };
 
   return (
@@ -110,6 +116,19 @@ function GamePage() {
           <div className='pokedex-line'></div>
           <div className='pokedex-title'>Pokedex</div>
           <div className='pokedex-line'></div>
+        </div>
+        {showCorrect && inputValue === activePokemon.name && (
+          <>
+            <div className='pokedex-card'></div>
+            <img className='pokedex-avatar' src={activePokemon.spriteUrl} alt={`Pokemon ${activePokemon.name}`} />
+          </>
+        )}
+        <div className='pokedex-container'>
+          {correctGuesses.map((pokemon, index) => (
+            <div className='pokedex-card' key={index}>
+              <img className='pokedex-avatar' src={pokemon.spriteUrl} alt={pokemon.name} />
+            </div>
+          ))}
         </div>
       </div>
     </>
