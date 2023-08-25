@@ -117,3 +117,26 @@
         font-weight: 600;
     }
 }
+
+.pokedex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    min-height: 6.0625rem;
+
+    .pokedex-card {
+        background-image: linear-gradient(to bottom, $PrimaryBlue, lighten($SecondaryBlue, 2%));
+        border: solid 0.1875rem $PrimaryYellow;
+        border-radius: 0.3125rem;
+        box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+        height: 5.25rem;
+        max-width: 5.25rem;
+        margin: 0.1875rem;
+
+        .pokedex-avatar {
+            width: 5.25rem;
+            height: 5.25rem;
+        }
+    }
+}

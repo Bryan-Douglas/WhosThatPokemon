@@ -117,12 +117,6 @@ function GamePage() {
           <div className='pokedex-title'>Pokedex</div>
           <div className='pokedex-line'></div>
         </div>
-        {showCorrect && inputValue === activePokemon.name && (
-          <>
-            <div className='pokedex-card'></div>
-            <img className='pokedex-avatar' src={activePokemon.spriteUrl} alt={`Pokemon ${activePokemon.name}`} />
-          </>
-        )}
         <div className='pokedex-container'>
           {correctGuesses.map((pokemon, index) => (
             <div className='pokedex-card' key={index}>
