@@ -43,6 +43,23 @@ function GamePage() {
     return Math.floor(Math.random() * 1004) + 1;
   };
 
+  function decimetersToFeetAndInches(decimeters) {
+    const feet = decimeters * 0.328084;
+    const remainingFeet = Math.round(feet);
+    const totalInches = feet * 12;
+    const inches = Math.floor(totalInches);
+    const remainingInches = Math.round((totalInches - inches));
+
+    return { feet: remainingFeet, inches: remainingInches };
+  }
+
+  function hectogramsToPounds(hectograms) {
+    const pounds = hectograms * 0.220462;
+    const remainingPounds = Math.round(pounds);
+
+    return { pounds: remainingPounds };
+  }
+
   const fetchPokemonSprite = async () => {
     try {
       const randomPokemonId = generateRandomPokemonId();
@@ -51,10 +68,11 @@ function GamePage() {
       const spriteUrl = response.data.sprites.other['official-artwork'].front_default;
       const name = response.data.name;
       const types = response.data.types.map(typeObj => typeObj.type.name);
-      const height = response.data.height;
-      const weight = response.data.weight;
+      const height = decimetersToFeetAndInches(response.data.height);
+      const weight = hectogramsToPounds(response.data.weight);
       const genera = altResponse.data.genera[7].genus;
-      const flavourText = altResponse.data.flavor_text_entries[0].flavor_text;
+      const flavorText = altResponse.data.flavor_text_entries[0].flavor_text;
+      const cleanFlavorText = flavorText.replace(//, ' ');
       setActivePokemon({
         id: randomPokemonId,
         spriteUrl: spriteUrl,
@@ -63,7 +81,7 @@ function GamePage() {
         height: height,
         weight: weight,
         genera: genera,
-        flavor_text_entries: flavourText
+        flavor_text_entries: cleanFlavorText
       });
     } catch (error) {
       console.error('Error retrieving active pokemon data', error);
