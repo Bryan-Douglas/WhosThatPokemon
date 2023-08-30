@@ -6,7 +6,7 @@ import PokemonBio from '../../Components/PokemonBio/PokemonBio';
 
 function GamePage() {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [activePokemon, setActivePokemon] = useState({
     id: null,
     spriteUrl: null,
@@ -24,6 +24,7 @@ function GamePage() {
   const [correctGuesses, setCorrectGuesses] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedPokemon, setSelectedPokemon] = useState([]);
+  const [score, setScore] = useState(0);
 
   function openModal(pokemon) {
     setSelectedPokemon(pokemon);
@@ -117,6 +118,7 @@ function GamePage() {
 
   const handleCorrectGuess = (pokemon) => {
     setCorrectGuesses((prevGuesses) => [...prevGuesses, pokemon]);
+    setScore((prevScore) => prevScore + 1);
   };
 
   return (
@@ -138,6 +140,8 @@ function GamePage() {
         <div className='game-box'>
           <img className='pokemon-avatar' src={activePokemon.spriteUrl} alt={`Pokemon ${activePokemon.id}`} />
         </div>
+        <img className='score-title' src='./assets/pokemonscore.png' />
+        <p className='score-counter'>{score}</p>
         <div className='input-wrapper'>
           <input
             className='game-input'
