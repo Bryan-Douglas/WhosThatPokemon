@@ -1,12 +1,10 @@
 import './GamePage.scss';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PokemonBio from '../../Components/PokemonBio/PokemonBio';
 
 function GamePage() {
 
-  // const navigate = useNavigate();
   const [activePokemon, setActivePokemon] = useState({
     id: null,
     spriteUrl: null,
@@ -35,59 +33,19 @@ function GamePage() {
     setShowModal(false);
   }
 
-  useEffect(() => {
-    const randomPokemonId = generateRandomPokemonId();
-    fetchPokemonSprite(randomPokemonId);
-  }, []);
-
-  const generateRandomPokemonId = () => {
-    return Math.floor(Math.random() * 1004) + 1;
-  };
-
-  function decimetersToFeetAndInches(decimeters) {
-    const feet = decimeters * 0.328084;
-    const remainingFeet = Math.round(feet);
-    const totalInches = feet * 12;
-    const inches = Math.floor(totalInches);
-    const remainingInches = Math.round((totalInches - inches));
-
-    return { feet: remainingFeet, inches: remainingInches };
-  }
-
-  function hectogramsToPounds(hectograms) {
-    const pounds = hectograms * 0.220462;
-    const remainingPounds = Math.round(pounds);
-
-    return { pounds: remainingPounds };
-  }
-
   const fetchPokemonSprite = async () => {
     try {
-      const randomPokemonId = generateRandomPokemonId();
-      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`);
-      const altResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${randomPokemonId}`);
-      const spriteUrl = response.data.sprites.other['official-artwork'].front_default;
-      const name = response.data.name;
-      const types = response.data.types.map(typeObj => typeObj.type.name);
-      const height = decimetersToFeetAndInches(response.data.height);
-      const weight = hectogramsToPounds(response.data.weight);
-      const genera = altResponse.data.genera[7].genus;
-      const flavorText = altResponse.data.flavor_text_entries[0].flavor_text;
-      const cleanFlavorText = flavorText.replace(//, ' ');
-      setActivePokemon({
-        id: randomPokemonId,
-        spriteUrl: spriteUrl,
-        name: name,
-        types: types,
-        height: height,
-        weight: weight,
-        genera: genera,
-        flavor_text_entries: cleanFlavorText
-      });
+      const response = await axios.get(`http://localhost:3001/api/getRandomPokemon`);
+      const pokemonData = response.data;
+      setActivePokemon(pokemonData);
     } catch (error) {
       console.error('Error retrieving active pokemon data', error);
     }
   };
+
+  useEffect(() => {
+    fetchPokemonSprite();
+  }, []);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -97,9 +55,10 @@ function GamePage() {
     if (inputValue == activePokemon.name) {
       setFeedback('correct');
       setShowCorrect(true);
-      handleCorrectGuess(activePokemon);
       setTimeout(() => {
         setShowCorrect(false);
+        setCorrectGuesses(((prevGuesses) => [...prevGuesses, activePokemon]));
+        setScore((prevScore) => prevScore + 1)
         fetchPokemonSprite();
         setInputValue('');
         setFeedback('');
@@ -114,11 +73,6 @@ function GamePage() {
         setFeedback('');
       }, 1000);
     }
-  };
-
-  const handleCorrectGuess = (pokemon) => {
-    setCorrectGuesses((prevGuesses) => [...prevGuesses, pokemon]);
-    setScore((prevScore) => prevScore + 1);
   };
 
   return (
