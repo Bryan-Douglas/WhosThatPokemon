@@ -25,6 +25,7 @@ function GamePage() {
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [selectedPokemon, setSelectedPokemon] = useState([]);
   const [score, setScore] = useState(0);
+  const [scoreToSubmit, setScoreToSubmit] = useState(0);
 
   function openPokemonModal(pokemon) {
     setSelectedPokemon(pokemon);
@@ -33,6 +34,7 @@ function GamePage() {
 
   function openSubmitModal(score) {
     setShowSubmitModal(true);
+    setScoreToSubmit(score);
   }
 
   function closeModal() {
@@ -138,7 +140,7 @@ function GamePage() {
         </div>
       </div>
       {showPokemonModal && (<PokemonBio closeModal={closeModal} pokemon={selectedPokemon} />)}
-      {showSubmitModal && (<SubmitScore closeModal={closeModal} />)}
+      {showSubmitModal && (<SubmitScore closeModal={closeModal} scoreToSubmit={score} />)}
     </>
   )
 }
