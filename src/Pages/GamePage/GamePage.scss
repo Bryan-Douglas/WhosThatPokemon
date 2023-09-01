@@ -60,7 +60,7 @@
         position: fixed;
         margin: 8rem 0 0 38rem;
         width: 14%;
-        
+
     }
 
     .score-counter {
@@ -71,6 +71,31 @@
         position: fixed;
         margin: 8rem 0 0 82rem;
         width: 30%;
+    }
+
+    .score-submit {
+        width: 15%;
+        height: 5rem;
+        background-image: linear-gradient(to bottom, $SecondaryBlue, lighten($PrimaryBlue, 4%));
+        border: solid 0.1875rem $PrimaryYellow;
+        font-size: 1.125rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        color: $PrimaryYellow;
+        border-radius: 0.625rem;
+        cursor: pointer;
+        position: fixed;
+        margin: 16rem 0 0 50rem;
+    }
+
+    .score-submit:hover {
+        background-image: linear-gradient(to bottom, $PrimaryBlue, darken($SecondaryBlue, 22.25%));
+    }
+
+    .score-submit:active {
+        color: $PrimaryYellow;
+        box-shadow: inset 0rem 0rem 0.625rem;
+        outline: none;
     }
 
     .input-wrapper {

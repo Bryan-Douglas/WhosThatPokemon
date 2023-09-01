@@ -2,6 +2,7 @@ import './GamePage.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import PokemonBio from '../../Components/PokemonBio/PokemonBio';
+import SubmitScore from '../../Components/SubmitScore/SubmitScore';
 
 function GamePage() {
 
@@ -20,17 +21,23 @@ function GamePage() {
   const [feedback, setFeedback] = useState('');
   const [showCorrect, setShowCorrect] = useState(false);
   const [correctGuesses, setCorrectGuesses] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [showPokemonModal, setShowPokemonModal] = useState(false);
+  const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [selectedPokemon, setSelectedPokemon] = useState([]);
   const [score, setScore] = useState(0);
 
-  function openModal(pokemon) {
+  function openPokemonModal(pokemon) {
     setSelectedPokemon(pokemon);
-    setShowModal(true);
+    setShowPokemonModal(true);
+  }
+
+  function openSubmitModal(score) {
+    setShowSubmitModal(true);
   }
 
   function closeModal() {
-    setShowModal(false);
+    setShowPokemonModal(false);
+    setShowSubmitModal(false);
   }
 
   const fetchPokemonSprite = async () => {
@@ -96,6 +103,7 @@ function GamePage() {
         </div>
         <img className='score-title' src='./assets/pokemonscore.png' />
         <p className='score-counter'>{score}</p>
+        <button className='score-submit' type='submit' onClick={() => openSubmitModal(score)}>Submit Score</button>
         <div className='input-wrapper'>
           <input
             className='game-input'
@@ -123,13 +131,14 @@ function GamePage() {
         </div>
         <div className='pokedex-container'>
           {correctGuesses.map((pokemon, index) => (
-            <div className='pokedex-card' key={index} onClick={() => openModal(pokemon)}>
+            <div className='pokedex-card' key={index} onClick={() => openPokemonModal(pokemon)}>
               <img className='pokedex-avatar' src={pokemon.spriteUrl} alt={pokemon.name} />
             </div>
           ))}
         </div>
       </div>
-      {showModal && (<PokemonBio closeModal={closeModal} pokemon={selectedPokemon} />)}
+      {showPokemonModal && (<PokemonBio closeModal={closeModal} pokemon={selectedPokemon} />)}
+      {showSubmitModal && (<SubmitScore closeModal={closeModal} />)}
     </>
   )
 }
