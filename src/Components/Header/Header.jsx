@@ -27,8 +27,8 @@ function Header() {
         <>
             <div className='header-container'>
                 <img className='header-logo' src='assets/whosthatpokemonlogo.png' alt='who is that pokemon? logo' onClick={homeClick} />
-                <img className='header-login' src='assets/pokeball.svg' alt='login pokeball' onClick={openLoginModal} />
-                {showLoginModal && <Login closeModal={closeModal} />}
+                {/* <img className='header-login' src='assets/pokeball.svg' alt='login pokeball' onClick={openLoginModal} />
+                {showLoginModal && <Login closeModal={closeModal} />} */}
             </div>
         </>
     );

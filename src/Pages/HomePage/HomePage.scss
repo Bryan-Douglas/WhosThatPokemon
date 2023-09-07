@@ -42,10 +42,74 @@
     }
 
     .homePage-rightWrapper {
-        border: solid 0.0625rem black;
         width: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 1rem;
+
+        .homePage-highscores__container {
+            background-image: linear-gradient(to bottom, $PrimaryBlue, lighten($SecondaryBlue, 2%));
+            border: solid 0.125rem $PrimaryYellow;
+            border-radius: 0.3125rem;
+            box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 92%;
+            margin: 0;
+            max-height: 25rem;
+            overflow-y: auto;
+
+            .homePage-highscores__table__head {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border-bottom: solid 0.125rem $PrimaryYellow;
+                padding: 0;
+
+                .homePage-highscores__head__title__rank,
+                .homePage-highscores__head__title__name,
+                .homePage-highscores__head__title__score {
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: $PrimaryYellow;
+                padding: 0.5rem 1rem;
+                text-align: center;
+                border-right: solid 0.125rem $PrimaryYellow;
+                min-width: 6.25rem;
+                }
+
+                .homePage-highscores__head__title__score {
+                    border-right: none;
+                }
+            }
+        }
+
+        .homePage-highscores__row__container {
+            display: flex;
+            flex-direction: column;
+
+            .homePage-highscores__row__content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: solid 0.125rem $PrimaryYellow;
+                padding: 0;
+            }
+
+            .homePage-highscores__rank,
+            .homePage-highscores__name,
+            .homePage-highscores__score {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: $PrimaryYellow;
+                padding: 0.5rem 1rem;
+                text-align: center;
+                border-right: solid 0.125rem $PrimaryYellow;
+                min-width: 6.25rem;
+            }
+
+            .homePage-highscores__score {
+                border-right: none;
+            }
+        }
     }
 }

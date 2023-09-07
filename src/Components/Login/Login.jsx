@@ -15,6 +15,18 @@ function Login({ closeModal }) {
         fetchProfile(authToken)
     }, []);
 
+    // Fetches the profile using the stored token in session storage
+    const fetchProfile = (token) => {
+        axios.get('http://localhost:3001/api/logins', {
+            headers: {
+                authorization: `Bearer ${token}`
+            }
+        }).then(response => {
+            setProfileData(response.data);
+            setIsLoggedIn(true);
+        }).catch((err) => console.log('profile error', err.response.data))
+    };
+
     // Submits the form and stashes the stored token
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,18 +41,6 @@ function Login({ closeModal }) {
             fetchProfile(response.data.token);
         })
             .catch((err) => console.log('profile error', err.response.data))
-    };
-
-    // Fetches the profile using the stored token in session storage
-    const fetchProfile = (token) => {
-        axios.get('http://localhost:3001/api/logins', {
-            headers: {
-                authorization: `Bearer ${token}`
-            }
-        }).then(response => {
-            setProfileData(response.data);
-            setIsLoggedIn(true);
-        }).catch((err) => console.log('profile error', err.response.data))
     };
 
     const handleLogout = () => {
@@ -75,6 +75,7 @@ function Login({ closeModal }) {
                                     className='submit-score__input'
                                     type='text'
                                     placeholder='Who are you?'
+                                    name='username'
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
@@ -82,6 +83,7 @@ function Login({ closeModal }) {
                                     className='submit-score__input'
                                     type='password'
                                     placeholder='What is the password?'
+                                    name='password'
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
