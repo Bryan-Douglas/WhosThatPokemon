@@ -7,7 +7,7 @@ function SubmitScore({ closeModal, scoreToSubmit }) {
 
     const submitScore = async (name) => {
         console.log('Score to submit:', scoreToSubmit);
-  console.log('Name:', name);
+        console.log('Name:', name);
         try {
             const response = await axios.post('http://localhost:3001/api/submitScore', { name, score: scoreToSubmit });
             console.log('Score submitted successfully:', response.data);
@@ -43,14 +43,14 @@ function SubmitScore({ closeModal, scoreToSubmit }) {
                         <div className='button-container'>
                             <button className='modal-closeButton' onClick={closeModal}>X</button>
                         </div>
-                        <form onSubmit={handleSubmit}>
-                        <input 
-                        className='submit-score__input' 
-                        type='text' 
-                        placeholder='Who are you?'
-                        value={name}
-                        onChange={(e) => setName(e.target.value)} />
-                        <button className='submit-score__button' type='submit'>Submit Score</button>
+                        <form className='submit-score__container' onSubmit={handleSubmit}>
+                            <input
+                                className='submit-score__input'
+                                type='text'
+                                placeholder='Who are you?'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)} />
+                            <button className='submit-score__button' type='submit'>Submit Score</button>
                         </form>
                     </div>
                 </div>

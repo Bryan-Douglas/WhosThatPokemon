@@ -26,6 +26,7 @@ export default App;
 
 /* ToDo 
 - Set up variables and mixins.
+- add linkedin and github icons to the trainer bio.
 */
 
 /* Credits

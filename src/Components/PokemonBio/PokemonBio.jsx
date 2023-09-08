@@ -39,6 +39,7 @@ function PokemonBio({ closeModal, pokemon }) {
                                 <div className='pokemon-name__box'>
                                     <p className='pokemon-name'>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
                                 </div>
+                                <button className='modal-closeButton__mobile' onClick={closeModal}>X</button>
                             </div>
                             <div className='pokemon-sprite__box'>
                                 <img className='pokemon-sprite' src={pokemon.spriteUrl} alt={pokemon.spriteUrl} />
