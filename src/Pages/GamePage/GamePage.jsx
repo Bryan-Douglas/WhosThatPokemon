@@ -103,8 +103,10 @@ function GamePage() {
         <div className='game-box'>
           <img className='pokemon-avatar' src={activePokemon.spriteUrl} alt={`Pokemon ${activePokemon.id}`} />
         </div>
+        <div className='score-container'>
         <img className='score-title' src='./assets/pokemonscore.png' />
         <p className='score-counter'>{score}</p>
+        </div>
         <button className='score-submit' type='submit' onClick={() => openSubmitModal(score)}>Submit Score</button>
         <div className='input-wrapper'>
           <input

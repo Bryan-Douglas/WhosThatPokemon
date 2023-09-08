@@ -37,12 +37,20 @@ function HomePage() {
     });
   }, []);
 
+  useEffect(() => {
+    fetchScores().then((data) => {
+      // Sorts the scores by score value in descending order
+      const sortedScores = data.sort((a, b) => b.score - a.score);
+      setScores(sortedScores);
+    });
+  }, []);
+
   return (
     <>
       <div className='homePage-container'>
         <div className='homePage-leftWrapper'>
-          <img className='homePage-trainerCard' src='assets/BryanTrainerCard.png' alt='Bryans Pokemon Trainer Card' onClick={openModal} />
-          <button className='homePage-button' onClick={GameClick}> Play The Game!</button>
+        <button className='homePage-button' onClick={GameClick}> Play The Game!</button>
+          <img className='homePage-trainerCard' src='assets/BryanTrainerCard.png' alt='Bryans Pokemon Trainer Card' onClick={openModal} />          
         </div>
         <div className='homePage-rightWrapper'>
           <div className='homePage-highscores__container'>

@@ -43,7 +43,7 @@ function SubmitScore({ closeModal, scoreToSubmit }) {
                         <div className='button-container'>
                             <button className='modal-closeButton' onClick={closeModal}>X</button>
                         </div>
-                        <form onSubmit={handleSubmit}>
+                        <form className='submit-score__container' onSubmit={handleSubmit}>
                             <input
                                 className='submit-score__input'
                                 type='text'

@@ -33,7 +33,7 @@ function Login({ closeModal }) {
         const username = e.target.username.value;
         const password = e.target.password.value;
 
-        axios.post('http://localhost:3001/api/register', {
+        axios.post('http://localhost:3001/auth/register', {
             username: username,
             password: password
         }).then(response => {

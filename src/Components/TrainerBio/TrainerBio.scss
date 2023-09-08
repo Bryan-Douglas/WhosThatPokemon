@@ -1,4 +1,5 @@
 @use "../../styles/variables" as *;
+@use '../../styles/mixins' as *;
 
 .trainer-overlay {
     position: fixed;
@@ -19,9 +20,19 @@
     padding: 1.25rem;
     border-radius: 0.3125rem;
     box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-    width: 50%;
-    height: 18.75rem;
+    width: 80%;
+    height: 32.5rem;
     overflow: auto;
+
+    @include tablet {
+        width: 80%;
+        height: 18.75rem;
+    }
+
+    @include desktop {
+        width: 50%;
+        height: 20rem;
+    }
 
     .trainer-container {
         width: 100%;
@@ -58,12 +69,22 @@
 
         .trainer-bioWrapper {
             display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
+
+            @include tablet {
+                flex-direction: row;
+            }
 
             .trainer-bio {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
-                margin: 0rem 1rem;
+                margin: 1rem;
                 color: $PrimaryYellow;
+
+                @include tablet {
+                    margin: 0rem 1rem;
+                }
 
                 .bio-highlight {
                     color: $PrimaryOrange;
