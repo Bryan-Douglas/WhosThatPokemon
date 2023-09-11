@@ -1,0 +1,286 @@
+@use "../../styles/variables" as *;
+@use '../../styles/mixins' as *;
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0 0 0;
+
+    .message-container {
+        width: 90%;
+
+        @include tablet {
+            width: 100%;
+        }
+
+        .message-correct {
+            position: absolute;
+            width: 20rem;
+            margin-top: 3.125rem;
+            transform: rotate(-20deg);
+            z-index: 2;
+
+
+            @include tablet {
+                width: 13rem;
+            }
+
+            @include desktop {
+                width: 26.5625rem;
+            }
+        }
+
+        .message-incorrect {
+            position: absolute;
+            width: 20rem;
+            margin-top: 3.125rem;
+            transform: rotate(-20deg);
+            z-index: 2;
+
+            @include tablet {
+                width: 13rem;
+            }
+
+            @include desktop {
+                width: 26.5625rem;
+            }
+
+        }
+
+        .message-text {
+            color: $PrimaryYellow;
+            font-size: 1.5rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 400;
+            position: absolute;
+            margin-top: 17.5rem;
+            margin-left: 12.5rem;
+            z-index: 2;
+
+            @include tablet {
+                margin-top: 12.5rem;
+                margin-left: 1rem;
+                font-size: 1.25rem;
+            }
+
+            @include desktop {
+                margin-top: 12.5rem;
+                margin-left: 12.5rem;
+            }
+        }
+    }
+
+    .game-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 21.875rem;
+        background-color: $PrimaryLightBlue;
+        border: solid 0.1875rem $PrimaryYellow;
+        border-radius: 0.625rem;
+        color: $PrimaryBlue;
+        box-shadow: inset 5rem 8rem 5rem;
+        outline: none;
+
+        @include tablet {
+            width: 21.875rem;
+        }
+
+        .pokemon-avatar {
+            display: flex;
+            width: 15.625rem;
+            height: 15.625rem;
+            filter: brightness(0);
+        }
+    }
+
+    .score-container {
+        display: flex;
+        width: 90%;
+
+        @include desktop {
+            display: contents;
+        }
+
+        .score-title {
+            margin: 1rem 2rem 0 0;
+            width: 50%;
+
+            @include tablet {
+                margin: 1rem 0 0 10rem;
+                width: 30%;
+            }
+
+            @include desktop {
+                margin: 8rem 0 0 38rem;
+                position: fixed;
+                width: 14%;
+            }
+
+        }
+
+        .score-counter {
+            color: $PrimaryYellow;
+            font-size: 4.5rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+            margin: 1rem 5rem 0 0;
+            width: 30%;
+
+            @include tablet {
+                margin: 1rem 5rem 0 3rem;
+            }
+
+            @include desktop {
+                position: fixed;
+                margin: 8rem 0 0 82rem;
+            }
+        }
+    }
+
+
+
+    .score-submit {
+        width: 90%;
+        height: 2.5rem;
+        background-image: linear-gradient(to bottom, $SecondaryBlue, lighten($PrimaryBlue, 4%));
+        border: solid 0.1875rem $PrimaryYellow;
+        font-size: 1.125rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        color: $PrimaryYellow;
+        border-radius: 0.625rem;
+        cursor: pointer;
+        margin-top: 1rem;
+
+        @include tablet {
+            width: 50%;
+        }
+        
+        @include desktop {
+            position: fixed;
+            margin: 16rem 0 0 50rem;
+            width: 15%;
+            height: 5rem;
+        }
+    }
+
+    .score-submit:hover {
+        background-image: linear-gradient(to bottom, $PrimaryBlue, darken($SecondaryBlue, 22.25%));
+    }
+
+    .score-submit:active {
+        color: $PrimaryYellow;
+        box-shadow: inset 0rem 0rem 0.625rem;
+        outline: none;
+    }
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: 1rem 0 0 0;
+
+        @include tablet {
+            width: 380px;
+        }
+
+        @include desktop {
+            width: 21.875rem;
+        }
+
+        .game-input {
+            width: 65%;
+            height: 3.5rem;
+            background-image: linear-gradient(to bottom, $SecondaryBlue, lighten($PrimaryBlue, 4%));
+            border: solid 0.1875rem $PrimaryYellow;
+            border-radius: 0.625rem;
+            padding: 1rem;
+            font-size: 1.125rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+            color: $PrimaryYellow;
+        }
+
+        .game-input:focus {
+            outline: none;
+        }
+
+        .game-button {
+            height: 4rem;
+            width: 4rem;
+            cursor: pointer;
+        }
+
+        .game-button:hover {
+            transform: rotate(-40deg);
+        }
+
+        .game-button:active {
+            filter: drop-shadow(0 0 0.9375rem rgba(255, 204, 3, 1.5));
+        }
+    }
+
+    .pokedex-border {
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .pokedex-line {
+            border: solid 0.1875rem $PrimaryYellow;
+            flex: 1;
+        }
+
+        .pokedex-title {
+            margin: 0rem 0.5rem;
+            color: $PrimaryYellow;
+            font-size: 1.125rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+        }
+    }
+
+    .pokedex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 90%;
+        min-height: 6.0625rem;
+
+        @include tablet {
+            max-width: 100%;
+        }
+
+        .pokedex-card {
+            background-image: linear-gradient(to bottom, $PrimaryBlue, lighten($SecondaryBlue, 2%));
+            border: solid 0.1875rem $PrimaryYellow;
+            border-radius: 0.3125rem;
+            box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+            height: 6.125rem;
+            width: 6.125rem;
+            margin: 0.1875rem;
+            cursor: pointer;
+
+            @include tablet {
+                height: 5.25rem;
+                max-width: 5.25rem;
+            }
+
+            .pokedex-avatar {
+                width: 6.125rem;
+                height: 6.125rem;
+
+                @include tablet {
+                    width: 5.25rem;
+                    height: 5.25rem;
+                }
+            }
+        }
+    }
+}
