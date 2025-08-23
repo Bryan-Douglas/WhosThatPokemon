@@ -1,21 +1,5 @@
-<<<<<<< HEAD
 @use "../../styles/variables" as *;
 @use '../../styles/mixins' as *;
-=======
-/* TrainerBio Modal Styles - Fixed sizing and no scrolling */
-/* Original SCSS variables:
-   $PrimaryBlue: #386ABB (Main blue)
-   $SecondaryBlue: #274A82 (Darker blue)
-   $PrimaryYellow: #ffcc03 (Yellow accents)
-   $PrimaryOrange: #e15600 (Orange highlights)
-*/
-
-/* Breakpoints:
-   Mobile: < 768px (default)
-   Tablet: >= 768px
-   Desktop: >= 1280px
-*/
->>>>>>> b0c430a (Initial local commit for stashing)
 
 .trainer-overlay {
     position: fixed;
@@ -31,7 +15,6 @@
 }
 
 .trainer-content {
-<<<<<<< HEAD
     background-image: linear-gradient(to bottom, $PrimaryBlue, lighten($SecondaryBlue, 2%));
     border: solid 0.125rem $PrimaryYellow;
     padding: 1.25rem;
@@ -49,49 +32,15 @@
     @include desktop {
         width: 50%;
         height: 20rem;
-=======
-    /* $PrimaryBlue to $SecondaryBlue gradient */
-    background-image: linear-gradient(to bottom, #386ABB, #2a5a9a);
-    /* $PrimaryYellow border */
-    border: solid 0.125rem #ffcc03;
-    padding: 1.25rem;
-    border-radius: 0.3125rem;
-    box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-    width: 90%; /* Slightly wider on mobile */
-    height: auto; /* Auto height to fit content */
-    min-height: 20rem; /* Minimum height */
-    max-height: 90vh; /* Maximum height to prevent overflow */
-    overflow: hidden; /* No scrolling needed */
-
-    /* Tablet breakpoint: >= 768px */
-    @media (min-width: 768px) {
-        width: 70%;
-        height: auto;
-        min-height: 18rem;
-    }
-
-    /* Desktop breakpoint: >= 1280px */
-    @media (min-width: 1280px) {
-        width: 50%;
-        height: auto;
-        min-height: 20rem;
->>>>>>> b0c430a (Initial local commit for stashing)
     }
 
     .trainer-container {
         width: 100%;
-<<<<<<< HEAD
-=======
-        height: 100%;
-        display: flex;
-        flex-direction: column;
->>>>>>> b0c430a (Initial local commit for stashing)
 
         .trainer-titleWrapper {
             display: flex;
             justify-content: space-between;
             width: 100%;
-<<<<<<< HEAD
 
             .trainer-title {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -102,44 +51,14 @@
                 background-color: $PrimaryBlue;
                 color: $PrimaryYellow;
                 border: solid 0.125rem $PrimaryYellow;
-=======
-            margin-bottom: 1rem;
-
-            .trainer-title {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                /* $PrimaryYellow text */
-                color: #ffcc03;
-                font-size: 1.25rem;
-                font-weight: 600;
-            }
-
-            .modal-closeButton {
-                /* $PrimaryBlue background */
-                background-color: #386ABB;
-                /* $PrimaryYellow text and border */
-                color: #ffcc03;
-                border: solid 0.125rem #ffcc03;
->>>>>>> b0c430a (Initial local commit for stashing)
                 border-radius: 0.2188rem;
                 cursor: pointer;
                 width: 2.1875rem;
                 height: 2.1875rem;
-<<<<<<< HEAD
             }
 
             .modal-closeButton:hover {
                 background-color: $SecondaryBlue;
-=======
-                font-size: 1rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .modal-closeButton:hover {
-                /* $SecondaryBlue background on hover */
-                background-color: #274A82;
->>>>>>> b0c430a (Initial local commit for stashing)
             }
 
             .modal-closeButton:active {
@@ -153,25 +72,13 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-<<<<<<< HEAD
 
             @include tablet {
                 flex-direction: row;
-=======
-            flex: 1;
-            gap: 1rem;
-
-            /* Tablet breakpoint: >= 768px */
-            @media (min-width: 768px) {
-                flex-direction: row;
-                align-items: flex-start;
-                gap: 1.5rem;
->>>>>>> b0c430a (Initial local commit for stashing)
             }
 
             .trainer-bio {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
-<<<<<<< HEAD
                 margin: 1rem;
                 color: $PrimaryYellow;
 
@@ -181,47 +88,14 @@
 
                 .bio-highlight {
                     color: $PrimaryOrange;
-=======
-                margin: 0;
-                /* $PrimaryYellow text */
-                color: #ffcc03;
-                font-size: 0.875rem;
-                line-height: 1.4;
-                flex: 1;
-
-                /* Tablet breakpoint: >= 768px */
-                @media (min-width: 768px) {
-                    font-size: 1rem;
-                }
-
-                .bio-highlight {
-                    /* $PrimaryOrange highlight text */
-                    color: #e15600;
-                    font-weight: 600;
->>>>>>> b0c430a (Initial local commit for stashing)
                 }
             }
 
             .trainer-avatar {
-<<<<<<< HEAD
                 width: 12.5rem;
                 height: 12.5rem;
                 border-radius: 0.625rem;
                 border: solid 0.125rem $PrimaryYellow;
-=======
-                width: 10rem; /* Smaller on mobile */
-                height: 10rem;
-                border-radius: 0.625rem;
-                /* $PrimaryYellow border */
-                border: solid 0.125rem #ffcc03;
-                flex-shrink: 0; /* Prevent shrinking */
-
-                /* Tablet breakpoint: >= 768px */
-                @media (min-width: 768px) {
-                    width: 12.5rem;
-                    height: 12.5rem;
-                }
->>>>>>> b0c430a (Initial local commit for stashing)
             }
         }
     }

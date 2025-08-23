@@ -1,26 +1,10 @@
-<<<<<<< HEAD
 @use '/src/styles/mixins' as *;
-=======
-/* Header Styles - Fixed layout and responsive design */
-/* Original SCSS variables:
-   $PrimaryYellow: #ffcc03 (Yellow accents for hover effects)
-*/
-
-/* Breakpoints:
-   Mobile: < 768px (default)
-   Tablet: >= 768px
-*/
->>>>>>> b0c430a (Initial local commit for stashing)
 
 .header-container {
     display: flex;
     justify-content: center;
     min-width: 22.5rem;
-<<<<<<< HEAD
     height: 7.75rem;
-=======
-    height: 7.75rem; /* Fixed header height */
->>>>>>> b0c430a (Initial local commit for stashing)
 
     .header-logo {
         width: 17.8125rem;
@@ -28,16 +12,9 @@
         display: flex;
         cursor: pointer;
 
-<<<<<<< HEAD
         @include tablet {
             width: 65%;
         height: 7.75rem;
-=======
-        /* Tablet breakpoint: >= 768px */
-        @media (min-width: 768px) {
-            width: 65%;
-            height: 7.75rem;
->>>>>>> b0c430a (Initial local commit for stashing)
         }
     }
 
@@ -53,10 +30,6 @@
     }
 
     .header-login:active {
-<<<<<<< HEAD
-=======
-        /* $PrimaryYellow glow effect */
->>>>>>> b0c430a (Initial local commit for stashing)
         filter: drop-shadow(0 0 0.9375rem rgba(255, 204, 3, 1.5));
     }
 }
