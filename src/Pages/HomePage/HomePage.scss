@@ -1,47 +1,13 @@
-<<<<<<< HEAD
 @use "../../styles/variables" as *;
 @use '../../styles/mixins' as *;
-=======
-/* HomePage Styles - Fixed positioning with clear variable references */
-/* Original SCSS variables:
-   $PrimaryBackground: #F81C1E (Red background)
-   $SecondaryBackground: #ff4548 (Lighter red)
-   $PrimaryBlue: #386ABB (Main blue)
-   $SecondaryBlue: #274A82 (Darker blue)
-   $PrimaryYellow: #ffcc03 (Yellow accents)
-*/
-
-/* Breakpoints:
-   Mobile: < 768px (default)
-   Tablet: >= 768px
-   Desktop: >= 1280px
-*/
->>>>>>> b0c430a (Initial local commit for stashing)
 
 .homePage-container {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
     height: 83%;
 
     @include tablet {
         flex-direction: row;
-=======
-    height: calc(100vh - 7.75rem); /* 100vh minus header height */
-    min-height: calc(100vh - 7.75rem);
-    padding: 1rem;
-    box-sizing: border-box;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-
-    /* Tablet breakpoint: >= 768px */
-    @media (min-width: 768px) {
-        flex-direction: row;
-        height: calc(100vh - 7.75rem);
-        justify-content: space-between; /* Space between left and right sections */
-        align-items: flex-start; /* Align to top for tablet */
-        padding: 2rem;
->>>>>>> b0c430a (Initial local commit for stashing)
     }
 
     .homePage-leftWrapper {
@@ -49,26 +15,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-<<<<<<< HEAD
 
         @include tablet {
             width: 50%;
             margin: 13.4063rem 0rem 1rem 1rem;
-=======
-        justify-content: center; /* Center content vertically */
-
-        /* Tablet breakpoint: >= 768px */
-        @media (min-width: 768px) {
-            width: 50%;
-            margin: 0; /* Reset margin for proper centering */
-            justify-content: center;
->>>>>>> b0c430a (Initial local commit for stashing)
         }
 
         .homePage-button {
             width: 75%;
             height: 5rem;
-<<<<<<< HEAD
             background-image: linear-gradient(to bottom, $SecondaryBlue, lighten($PrimaryBlue, 4%));
             border: solid 0.1875rem $PrimaryYellow;
             font-size: 1.125rem;
@@ -83,48 +38,16 @@
             }
 
             @include desktop {
-=======
-            /* $SecondaryBlue to $PrimaryBlue gradient */
-            background-image: linear-gradient(to bottom, #274A82, #47b1fc);
-            /* $PrimaryYellow border */
-            border: solid 0.1875rem #ffcc03;
-            font-size: 1.125rem;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 600;
-            /* $PrimaryYellow text */
-            color: #ffcc03;
-            border-radius: 0.625rem;
-            cursor: pointer;
-            margin-bottom: 1rem; /* Space between button and trainer card */
-
-            /* Tablet breakpoint: >= 768px */
-            @media (min-width: 768px) {
-                width: 100%;
-                margin-bottom: 1.5rem;
-            }
-
-            /* Desktop breakpoint: >= 1280px */
-            @media (min-width: 1280px) {
->>>>>>> b0c430a (Initial local commit for stashing)
                 width: 60%;
             }
         }
 
         .homePage-button:hover {
-<<<<<<< HEAD
             background-image: linear-gradient(to bottom, $PrimaryBlue, darken($SecondaryBlue, 22.25%));
         }
 
         .homePage-button:active {
             color: $PrimaryYellow;
-=======
-            /* $PrimaryBlue to darker $SecondaryBlue gradient */
-            background-image: linear-gradient(to bottom, #386ABB, #1a2f4a);
-        }
-
-        .homePage-button:active {
-            color: #ffcc03;
->>>>>>> b0c430a (Initial local commit for stashing)
             box-shadow: inset 0rem 0rem 0.625rem;
             outline: none;
         }
@@ -132,7 +55,6 @@
         .homePage-trainerCard {
             width: 90%;
             height: 18.0469rem;
-<<<<<<< HEAD
             margin-top: 1rem;
             cursor: pointer;
 
@@ -141,17 +63,6 @@
             }
 
             @include desktop {
-=======
-            cursor: pointer;
-
-            /* Tablet breakpoint: >= 768px */
-            @media (min-width: 768px) {
-                width: 100%;
-            }
-
-            /* Desktop breakpoint: >= 1280px */
-            @media (min-width: 1280px) {
->>>>>>> b0c430a (Initial local commit for stashing)
                 width: 80%;
             }
         }
@@ -162,7 +73,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-<<<<<<< HEAD
         margin: 1rem 0;
         
 
@@ -174,23 +84,6 @@
         .homePage-highscores__container {
             background-image: linear-gradient(to bottom, $PrimaryBlue, lighten($SecondaryBlue, 2%));
             border: solid 0.125rem $PrimaryYellow;
-=======
-        margin-top: 1rem; /* Space from left section */
-
-        /* Tablet breakpoint: >= 768px */
-        @media (min-width: 768px) {
-            width: 50%;
-            margin: 0; /* Reset margin for proper spacing */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .homePage-highscores__container {
-            /* $PrimaryBlue to $SecondaryBlue gradient */
-            background-image: linear-gradient(to bottom, #386ABB, #2a5a9a);
-            /* $PrimaryYellow border */
-            border: solid 0.125rem #ffcc03;
->>>>>>> b0c430a (Initial local commit for stashing)
             border-radius: 0.3125rem;
             box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
             width: 90%;
@@ -199,21 +92,11 @@
             max-height: 25rem;
             overflow-y: auto;
 
-<<<<<<< HEAD
             @include tablet {
                 width: 100%;
             }
 
             @include desktop {
-=======
-            /* Tablet breakpoint: >= 768px */
-            @media (min-width: 768px) {
-                width: 100%;
-            }
-
-            /* Desktop breakpoint: >= 1280px */
-            @media (min-width: 1280px) {
->>>>>>> b0c430a (Initial local commit for stashing)
                 width: 60%;
             }
 
@@ -221,19 +104,13 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-<<<<<<< HEAD
                 border-bottom: solid 0.125rem $PrimaryYellow;
-=======
-                /* $PrimaryYellow border */
-                border-bottom: solid 0.125rem #ffcc03;
->>>>>>> b0c430a (Initial local commit for stashing)
                 padding: 0;
 
                 .homePage-highscores__head__title__rank,
                 .homePage-highscores__head__title__name,
                 .homePage-highscores__head__title__score {
                     font-family: Verdana, Geneva, Tahoma, sans-serif;
-<<<<<<< HEAD
                     color: $PrimaryYellow;
                     padding: 0.5rem 1rem;
                     text-align: center;
@@ -241,18 +118,6 @@
                     min-width: 4.5rem;
 
                     @include tablet {
-=======
-                    /* $PrimaryYellow text */
-                    color: #ffcc03;
-                    padding: 0.5rem 1rem;
-                    text-align: center;
-                    /* $PrimaryYellow border */
-                    border-right: solid 0.125rem #ffcc03;
-                    min-width: 4.5rem;
-
-                    /* Tablet breakpoint: >= 768px */
-                    @media (min-width: 768px) {
->>>>>>> b0c430a (Initial local commit for stashing)
                         min-width: 6.25rem;
                     }
                 }
@@ -266,22 +131,13 @@
         .homePage-highscores__row__container {
             display: flex;
             flex-direction: column;
-<<<<<<< HEAD
-=======
-            justify-content: center;
->>>>>>> b0c430a (Initial local commit for stashing)
 
             .homePage-highscores__row__content {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-<<<<<<< HEAD
                 align-items: center;
                 border-bottom: solid 0.125rem $PrimaryYellow;
-=======
-                /* $PrimaryYellow border */
-                border-bottom: solid 0.125rem #ffcc03;
->>>>>>> b0c430a (Initial local commit for stashing)
                 padding: 0;
             }
 
@@ -293,7 +149,6 @@
             .homePage-highscores__name,
             .homePage-highscores__score {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
-<<<<<<< HEAD
                 color: $PrimaryYellow;
                 padding: 0.5rem 1rem;
                 text-align: center;
@@ -303,20 +158,6 @@
                     @include tablet {
                         min-width: 6.25rem;
                     }
-=======
-                /* $PrimaryYellow text */
-                color: #ffcc03;
-                padding: 0.5rem 1rem;
-                text-align: center;
-                /* $PrimaryYellow border */
-                border-right: solid 0.125rem #ffcc03;
-                min-width: 4.5rem;
-
-                /* Tablet breakpoint: >= 768px */
-                @media (min-width: 768px) {
-                    min-width: 6.25rem;
-                }
->>>>>>> b0c430a (Initial local commit for stashing)
             }
 
             .homePage-highscores__score {
