@@ -1,16 +1,45 @@
+<<<<<<< HEAD
 @use "../../styles/variables" as *;
 @use '../../styles/mixins' as *;
+=======
+/* GamePage Styles - Restored original layout and sizing */
+/* Original SCSS variables:
+   $PrimaryBackground: #F81C1E (Red background)
+   $PrimaryBlue: #386ABB (Main blue)
+   $SecondaryBlue: #274A82 (Darker blue)
+   $PrimaryYellow: #ffcc03 (Yellow accents)
+   $PrimaryLightBlue: #47b1fc (Light blue)
+*/
+
+/* Breakpoints:
+   Mobile: < 768px (default)
+   Tablet: >= 768px
+   Desktop: >= 1280px
+*/
+>>>>>>> b0c430a (Initial local commit for stashing)
 
 .game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
     margin: 1rem 0 0 0;
 
     .message-container {
         width: 90%;
 
         @include tablet {
+=======
+    margin: 1rem 0 0 0; /* Original top margin */
+    min-height: calc(100vh - 7.75rem); /* Account for header */
+
+    .message-container {
+        width: 90%;
+        position: relative; /* For absolute positioning of messages */
+
+        /* Tablet breakpoint: >= 768px */
+        @media (min-width: 768px) {
+>>>>>>> b0c430a (Initial local commit for stashing)
             width: 100%;
         }
 
@@ -21,12 +50,22 @@
             transform: rotate(-20deg);
             z-index: 2;
 
+<<<<<<< HEAD
 
             @include tablet {
                 width: 13rem;
             }
 
             @include desktop {
+=======
+            /* Tablet breakpoint: >= 768px */
+            @media (min-width: 768px) {
+                width: 13rem;
+            }
+
+            /* Desktop breakpoint: >= 1280px */
+            @media (min-width: 1280px) {
+>>>>>>> b0c430a (Initial local commit for stashing)
                 width: 26.5625rem;
             }
         }
@@ -38,6 +77,7 @@
             transform: rotate(-20deg);
             z-index: 2;
 
+<<<<<<< HEAD
             @include tablet {
                 width: 13rem;
             }
@@ -50,6 +90,22 @@
 
         .message-text {
             color: $PrimaryYellow;
+=======
+            /* Tablet breakpoint: >= 768px */
+            @media (min-width: 768px) {
+                width: 13rem;
+            }
+
+            /* Desktop breakpoint: >= 1280px */
+            @media (min-width: 1280px) {
+                width: 26.5625rem;
+            }
+        }
+
+        .message-text {
+            /* $PrimaryYellow text */
+            color: #ffcc03;
+>>>>>>> b0c430a (Initial local commit for stashing)
             font-size: 1.5rem;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: 400;
@@ -58,13 +114,23 @@
             margin-left: 12.5rem;
             z-index: 2;
 
+<<<<<<< HEAD
             @include tablet {
+=======
+            /* Tablet breakpoint: >= 768px */
+            @media (min-width: 768px) {
+>>>>>>> b0c430a (Initial local commit for stashing)
                 margin-top: 12.5rem;
                 margin-left: 1rem;
                 font-size: 1.25rem;
             }
 
+<<<<<<< HEAD
             @include desktop {
+=======
+            /* Desktop breakpoint: >= 1280px */
+            @media (min-width: 1280px) {
+>>>>>>> b0c430a (Initial local commit for stashing)
                 margin-top: 12.5rem;
                 margin-left: 12.5rem;
             }
@@ -76,6 +142,7 @@
         justify-content: center;
         align-items: center;
         width: 90%;
+<<<<<<< HEAD
         height: 21.875rem;
         background-color: $PrimaryLightBlue;
         border: solid 0.1875rem $PrimaryYellow;
@@ -86,11 +153,32 @@
 
         @include tablet {
             width: 21.875rem;
+=======
+        height: 21.875rem; /* Original height */
+        /* $PrimaryLightBlue background */
+        background-color: #47b1fc;
+        /* $PrimaryYellow border */
+        border: solid 0.1875rem #ffcc03;
+        border-radius: 0.625rem;
+        /* $PrimaryBlue text */
+        color: #386ABB;
+        box-shadow: inset 5rem 8rem 5rem;
+        outline: none;
+        margin: 1rem 0; /* Space above and below */
+
+        /* Tablet breakpoint: >= 768px */
+        @media (min-width: 768px) {
+            width: 21.875rem; /* Fixed width on tablet */
+>>>>>>> b0c430a (Initial local commit for stashing)
         }
 
         .pokemon-avatar {
             display: flex;
+<<<<<<< HEAD
             width: 15.625rem;
+=======
+            width: 15.625rem; /* Original size */
+>>>>>>> b0c430a (Initial local commit for stashing)
             height: 15.625rem;
             filter: brightness(0);
         }
@@ -99,12 +187,22 @@
     .score-container {
         display: flex;
         width: 90%;
+<<<<<<< HEAD
 
         @include desktop {
+=======
+        justify-content: space-between; /* Space between score title and counter */
+        align-items: center;
+        margin: 1rem 0;
+
+        /* Desktop breakpoint: >= 1280px */
+        @media (min-width: 1280px) {
+>>>>>>> b0c430a (Initial local commit for stashing)
             display: contents;
         }
 
         .score-title {
+<<<<<<< HEAD
             margin: 1rem 2rem 0 0;
             width: 50%;
 
@@ -136,10 +234,51 @@
             @include desktop {
                 position: fixed;
                 margin: 8rem 0 0 82rem;
+=======
+            margin: 1rem 1rem 0 0; /* Reduced right margin to bring closer to counter */
+            width: 50%;
+            text-align: center;
+
+            /* Tablet breakpoint: >= 768px */
+            @media (min-width: 768px) {
+                margin: 1rem 0 0 5rem; /* Reduced left margin to bring closer to counter */
+                width: 30%;
+            }
+
+            /* Desktop breakpoint: >= 1280px */
+            @media (min-width: 1280px) {
+                margin: 8rem 0 0 40rem; /* Original desktop positioning */
+                position: fixed;
+                width: 14%;
+            }
+        }
+
+        .score-counter {
+            /* $PrimaryYellow text */
+            color: #ffcc03;
+            font-size: 4.5rem; /* Original large size */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+            margin: 1rem 2rem 0 0; /* Reduced right margin to bring closer to title */
+            width: 30%;
+            text-align: center;
+
+            /* Tablet breakpoint: >= 768px */
+            @media (min-width: 768px) {
+                margin: 1rem 2rem 0 2rem; /* Reduced margins to bring closer to title */
+                width: 30%;
+            }
+
+            /* Desktop breakpoint: >= 1280px */
+            @media (min-width: 1280px) {
+                position: fixed;
+                margin: 8rem 0 0 60rem; /* Original desktop positioning */
+>>>>>>> b0c430a (Initial local commit for stashing)
             }
         }
     }
 
+<<<<<<< HEAD
 
 
     .score-submit {
@@ -164,15 +303,53 @@
             margin: 16rem 0 0 50rem;
             width: 15%;
             height: 5rem;
+=======
+    .score-submit {
+        width: 90%;
+        height: 2.5rem; /* Original height */
+        /* $SecondaryBlue to $PrimaryBlue gradient */
+        background-image: linear-gradient(to bottom, #274A82, #47b1fc);
+        /* $PrimaryYellow border */
+        border: solid 0.1875rem #ffcc03;
+        font-size: 1.125rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        /* $PrimaryYellow text */
+        color: #ffcc03;
+        border-radius: 0.625rem;
+        cursor: pointer;
+        margin: 1rem 0;
+
+        /* Tablet breakpoint: >= 768px */
+        @media (min-width: 768px) {
+            width: 50%; /* Original tablet width */
+        }
+        
+        /* Desktop breakpoint: >= 1280px */
+        @media (min-width: 1280px) {
+            position: fixed;
+            margin: 16rem 0 0 50rem; /* Original desktop positioning */
+            width: 15%;
+            height: 5rem; /* Original desktop height */
+>>>>>>> b0c430a (Initial local commit for stashing)
         }
     }
 
     .score-submit:hover {
+<<<<<<< HEAD
         background-image: linear-gradient(to bottom, $PrimaryBlue, darken($SecondaryBlue, 22.25%));
     }
 
     .score-submit:active {
         color: $PrimaryYellow;
+=======
+        /* $PrimaryBlue to darker $SecondaryBlue gradient */
+        background-image: linear-gradient(to bottom, #386ABB, #1a2f4a);
+    }
+
+    .score-submit:active {
+        color: #ffcc03;
+>>>>>>> b0c430a (Initial local commit for stashing)
         box-shadow: inset 0rem 0rem 0.625rem;
         outline: none;
     }
@@ -183,6 +360,7 @@
         justify-content: space-between;
         align-items: center;
         width: 90%;
+<<<<<<< HEAD
         margin: 1rem 0 0 0;
 
         @include tablet {
@@ -198,12 +376,39 @@
             height: 3.5rem;
             background-image: linear-gradient(to bottom, $SecondaryBlue, lighten($PrimaryBlue, 4%));
             border: solid 0.1875rem $PrimaryYellow;
+=======
+        margin: 1rem 0 0 0; /* Original margin */
+        gap: 1rem; /* Space between input and button */
+
+        /* Tablet breakpoint: >= 768px */
+        @media (min-width: 768px) {
+            width: 380px; /* Original tablet width */
+        }
+
+        /* Desktop breakpoint: >= 1280px */
+        @media (min-width: 1280px) {
+            width: 21.875rem; /* Original desktop width */
+        }
+
+        .game-input {
+            width: 75%; /* Increased from 65% to match original */
+            height: 3.5rem; /* Original height */
+            /* $SecondaryBlue to $PrimaryBlue gradient */
+            background-image: linear-gradient(to bottom, #274A82, #47b1fc);
+            /* $PrimaryYellow border */
+            border: solid 0.1875rem #ffcc03;
+>>>>>>> b0c430a (Initial local commit for stashing)
             border-radius: 0.625rem;
             padding: 1rem;
             font-size: 1.125rem;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: 600;
+<<<<<<< HEAD
             color: $PrimaryYellow;
+=======
+            /* $PrimaryYellow text */
+            color: #ffcc03;
+>>>>>>> b0c430a (Initial local commit for stashing)
         }
 
         .game-input:focus {
@@ -211,8 +416,13 @@
         }
 
         .game-button {
+<<<<<<< HEAD
             height: 4rem;
             width: 4rem;
+=======
+            height: 4rem; /* Original height */
+            width: 4rem; /* Original width */
+>>>>>>> b0c430a (Initial local commit for stashing)
             cursor: pointer;
         }
 
@@ -227,19 +437,33 @@
 
     .pokedex-border {
         width: 100%;
+<<<<<<< HEAD
         margin-top: 1rem;
+=======
+        margin: 5rem 0 1rem 0; /* Increased top margin from 3rem to 5rem to lower Pokedex section more */
+>>>>>>> b0c430a (Initial local commit for stashing)
         display: flex;
         align-items: center;
         justify-content: center;
 
         .pokedex-line {
+<<<<<<< HEAD
             border: solid 0.1875rem $PrimaryYellow;
+=======
+            /* $PrimaryYellow border */
+            border: solid 0.1875rem #ffcc03;
+>>>>>>> b0c430a (Initial local commit for stashing)
             flex: 1;
         }
 
         .pokedex-title {
             margin: 0rem 0.5rem;
+<<<<<<< HEAD
             color: $PrimaryYellow;
+=======
+            /* $PrimaryYellow text */
+            color: #ffcc03;
+>>>>>>> b0c430a (Initial local commit for stashing)
             font-size: 1.125rem;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: 600;
@@ -251,13 +475,24 @@
         flex-direction: row;
         flex-wrap: wrap;
         max-width: 90%;
+<<<<<<< HEAD
         min-height: 6.0625rem;
 
         @include tablet {
+=======
+        min-height: 6.0625rem; /* Original height */
+        justify-content: center; /* Center the Pokedex cards */
+        gap: 0.5rem; /* Consistent spacing between cards */
+        margin-bottom: 2rem; /* Space at bottom */
+
+        /* Tablet breakpoint: >= 768px */
+        @media (min-width: 768px) {
+>>>>>>> b0c430a (Initial local commit for stashing)
             max-width: 100%;
         }
 
         .pokedex-card {
+<<<<<<< HEAD
             background-image: linear-gradient(to bottom, $PrimaryBlue, lighten($SecondaryBlue, 2%));
             border: solid 0.1875rem $PrimaryYellow;
             border-radius: 0.3125rem;
@@ -278,6 +513,31 @@
 
                 @include tablet {
                     width: 5.25rem;
+=======
+            /* $PrimaryBlue to $SecondaryBlue gradient */
+            background-image: linear-gradient(to bottom, #386ABB, #2a5a9a);
+            /* $PrimaryYellow border */
+            border: solid 0.1875rem #ffcc03;
+            border-radius: 0.3125rem;
+            box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+            height: 6.125rem; /* Original height */
+            width: 6.125rem; /* Original width */
+            cursor: pointer;
+
+            /* Tablet breakpoint: >= 768px */
+            @media (min-width: 768px) {
+                height: 5.25rem; /* Original tablet height */
+                max-width: 5.25rem; /* Original tablet width */
+            }
+
+            .pokedex-avatar {
+                width: 6.125rem; /* Original size */
+                height: 6.125rem;
+
+                /* Tablet breakpoint: >= 768px */
+                @media (min-width: 768px) {
+                    width: 5.25rem; /* Original tablet size */
+>>>>>>> b0c430a (Initial local commit for stashing)
                     height: 5.25rem;
                 }
             }

@@ -65,7 +65,18 @@ function PokemonBio({ closeModal, pokemon }) {
                                 <p className='pokemon-flavourText'>{pokemon.flavor_text_entries}</p>
                             </div>
                             <div className='pokemon-link__box'>
+<<<<<<< HEAD
                             <a className='pokemon-link' href={`https://bulbapedia.bulbagarden.net/wiki/${pokemon.name}`}>https://bulbapedia.bulbagarden.net/wiki/{pokemon.name}</a>
+=======
+                                <a 
+                                    className='pokemon-link' 
+                                    href={`https://bulbapedia.bulbagarden.net/wiki/${pokemon.name}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View on Bulbapedia
+                                </a>
+>>>>>>> b0c430a (Initial local commit for stashing)
                             </div>
                         </div>
                     </div>
