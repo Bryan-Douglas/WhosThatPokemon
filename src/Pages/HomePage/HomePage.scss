@@ -15,10 +15,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
 
         @include tablet {
             width: 50%;
-            margin: 13.4063rem 0rem 1rem 1rem;
+            margin: 3rem 0rem 1rem 1rem;
         }
 
         .homePage-button {
@@ -55,7 +56,7 @@
         .homePage-trainerCard {
             width: 90%;
             height: 18.0469rem;
-            margin-top: 1rem;
+            margin-top: 10rem;
             cursor: pointer;
 
             @include tablet {
@@ -72,13 +73,13 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: baseline;
         margin: 1rem 0;
         
 
         @include tablet {
             width: 50%;
-            margin: 13.4063rem 1rem 1rem 1rem;
+            margin: 3rem 1rem 1rem 1rem;
         }
 
         .homePage-highscores__container {
